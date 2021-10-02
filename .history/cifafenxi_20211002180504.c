@@ -101,10 +101,6 @@ int getsym(){
         printf("Lt\n");
     else if(c == '>')
         printf("Gt\n");
-    else {
-        printf("Err\n");
-        exit(0);
-    }
     
     if(flag == 1)
         return 1;
