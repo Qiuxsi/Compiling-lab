@@ -7,7 +7,7 @@
 #   使用 path 指定 dockerfile 的构建目录， "." 表示当前目录。
 #   使用 file 指定 dockerfile 相对于构建目录的位置，默认是 "./Dockerfile"。
 #   使用 tag 指定构建完成之后镜像的名称。没有实际意义，但是方便报错的时候看。
-image = { source = "dockerfile", path = ".", tag = "lexer" }
+image = { source = "dockerfile", path = ".", tag = "cifafenxi" }
 
 # 我们还支持直接使用已经存在的镜像，此时填写 source = "image"
 #   此时，使用 tag 直接指定镜像的名称。
