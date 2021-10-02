@@ -1,0 +1,5 @@
+FROM gcc
+RUN apt-get update && apt-get install g++ -y
+WORKDIR /app/
+COPY cifafenxi.c ./
+RUN g++ cifafenxi.c -o cifafenxi
