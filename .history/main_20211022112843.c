@@ -46,7 +46,7 @@ int getsym(){
     if((c = fgetc(inputfp)) == EOF)  // 已读取到文末
         return 0;
 
-    while(c == ' ' || c == '\t' || c == '\n' || c == '\r' || c == '/'){   // 消除注释、空格、换行和Tab
+    while(c == ' ' || c == '\t' || c == '\n' || c == '|| c == '/'){   // 消除注释、空格、换行和Tab
 
         if(c == '/'){
             if((c = fgetc(inputfp)) == EOF)
