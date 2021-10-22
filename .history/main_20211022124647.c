@@ -75,8 +75,9 @@ int getsym(){
         else if(c == '\r'){ // '\r'的判断有点奇怪
             if(fgetc(inputfp) == '\n')
                 c = fgetc(inputfp);
-            else
-                error();
+            else{
+                fseek(inputfp, -1, SEEK_CUR);
+            }
         }
         else{
             if((c = fgetc(inputfp)) == EOF)

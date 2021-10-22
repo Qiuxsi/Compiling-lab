@@ -72,11 +72,10 @@ int getsym(){
             else
                 error();
         }
-        else if(c == '\r'){ // '\r'的判断有点奇怪
+        else if(c == '\r'){
             if(fgetc(inputfp) == '\n')
                 c = fgetc(inputfp);
-            else
-                error();
+            
         }
         else{
             if((c = fgetc(inputfp)) == EOF)
