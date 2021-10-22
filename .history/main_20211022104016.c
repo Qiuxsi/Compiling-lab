@@ -50,7 +50,7 @@ int getsym(){
 
         if(c == '/'){
             if((c = fgetc(inputfp)) == EOF)
-                error();
+                exit(0);
 
             if(c == '/'){
                 while(c != '\n' && c != '\0' && c != '\r')
@@ -129,7 +129,6 @@ int main(int argc, char** argv){
     }
     if((outputfp = fopen(outputpath, "w")) == NULL){
         puts("Fail to open output file!");
-        exit(0);
     }
 
     k = 0;

@@ -5,7 +5,7 @@
 #define N 100
 FILE *inputfp, *outputfp;
 char token[N];
-int k;  // token的数组下标
+int k;  //token的数组下标
 
 void CompUnit();
 void FuncDef();
@@ -16,7 +16,7 @@ void Stmt();
 void Number();
 int error();
 
-int isNondigit(char c){ // 包括Letter和Underline
+int isNondigit(char c){ //包括Letter和Underline
     if((c <= 90 && c >= 65) || (c <= 122 && c >= 97) || c == '_')
         return 1;
     else 
@@ -43,49 +43,22 @@ int getsym(){
     memset(token, '\0', sizeof(token));
     k = 0;
 
-    if((c = fgetc(inputfp)) == EOF)  // 已读取到文末
+    if((c = fgetc(inputfp)) == EOF)  //已读取到文末
         return 0;
 
-    while(c == ' ' || c == '\t' || c == '\n' || c == '/'){   // 消除注释、空格、换行和Tab
-
-        if(c == '/'){
-            if((c = fgetc(inputfp)) == EOF)
-                error();
-
-            if(c == '/'){
-                while(c != '\n' && c != '\0' && c != '\r')
-                    c = fgetc(inputfp);
-                c = fgetc(inputfp);
-            }
-            else if(c == '*'){
-                while(1){
-                    if((c = fgetc(inputfp)) == EOF)
-                        error();
-                    if(c == '*'){
-                        if((c = fgetc(inputfp)) == '/'){
-                            c = fgetc(inputfp);
-                            break;
-                        }
-                    }
-                }
-            }
-            else
-                error();
-        }
-        else{
-            if((c = fgetc(inputfp)) == EOF)
-                return 0;
-        }
+    while(c == ' ' || c == '\t' || c == '\n'){ //跳过空格、换行和Tab
+        if((c = fgetc(inputfp)) == EOF)
+            return 0;
     }
 
     if(isNondigit(c)){
         while(isNondigit(c) || isDigit(c)){
-            token[k++] = c; // 拼接字符串
+            token[k++] = c; //拼接字符串
             if((c = fgetc(inputfp)) == EOF)
                 break;
         }
         token[k] = '\0';
-        fseek(inputfp, -1, SEEK_CUR);   // retract
+        fseek(inputfp, -1, SEEK_CUR);   //retract
         /**
         if(strcmp(token, "if") == 0)
             printf("If\n");
@@ -116,6 +89,7 @@ int getsym(){
         token[0] = c;
         token[1] = '\0';
 
+else
     }
     else
         error();
@@ -129,7 +103,6 @@ int main(int argc, char** argv){
     }
     if((outputfp = fopen(outputpath, "w")) == NULL){
         puts("Fail to open output file!");
-        exit(0);
     }
 
     k = 0;

@@ -260,5 +260,6 @@ void Number(){  // Number部分先不写成递归下降
 }
 
 int error(){
+    printf("?");
     exit(1);
 }

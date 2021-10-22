@@ -46,36 +46,28 @@ int getsym(){
     if((c = fgetc(inputfp)) == EOF)  // 已读取到文末
         return 0;
 
-    while(c == ' ' || c == '\t' || c == '\n' || c == '/'){   // 消除注释、空格、换行和Tab
+    while(c == ' ' || c == '\t' || c == '\n'){ // 跳过空格、换行和Tab
+        if((c = fgetc(inputfp)) == EOF)
+            return 0;
+    }
+
+    if(c == '/'){   // 消除注释
+        if((c = fgetc(inputfp)) == EOF)
+            exit(0);
 
         if(c == '/'){
-            if((c = fgetc(inputfp)) == EOF)
-                error();
-
-            if(c == '/'){
-                while(c != '\n' && c != '\0' && c != '\r')
-                    c = fgetc(inputfp);
+            while(c != '\n' && c != '\0' && c != '\r')
                 c = fgetc(inputfp);
-            }
-            else if(c == '*'){
-                while(1){
-                    if((c = fgetc(inputfp)) == EOF)
-                        error();
-                    if(c == '*'){
-                        if((c = fgetc(inputfp)) == '/'){
-                            c = fgetc(inputfp);
-                            break;
-                        }
-                    }
-                }
-            }
-            else
-                error();
         }
-        else{
-            if((c = fgetc(inputfp)) == EOF)
-                return 0;
+        else if(c == '*'){
+            while(c != '*')
+                if((c = fgetc(inputfp)) == EOF)
+                    exit(1);
+            
         }
+        else
+            exit(0);
+        c = fgetc(inputfp); // 可能要判断读到文末
     }
 
     if(isNondigit(c)){
@@ -129,7 +121,6 @@ int main(int argc, char** argv){
     }
     if((outputfp = fopen(outputpath, "w")) == NULL){
         puts("Fail to open output file!");
-        exit(0);
     }
 
     k = 0;

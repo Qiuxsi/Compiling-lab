@@ -129,7 +129,6 @@ int main(int argc, char** argv){
     }
     if((outputfp = fopen(outputpath, "w")) == NULL){
         puts("Fail to open output file!");
-        exit(0);
     }
 
     k = 0;
