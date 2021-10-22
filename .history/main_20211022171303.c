@@ -54,8 +54,7 @@ int getsym(){
 
             if(c == '/'){
                 while(c != '\n' && c != '\0' && c != '\r')
-                    if((c = fgetc(inputfp)) == EOF) // 这里要判断EOF，（很关键
-                        return 0;
+                    c = fgetc(inputfp);
                 c = fgetc(inputfp);
             }
             else if(c == '*'){
@@ -90,7 +89,20 @@ int getsym(){
         token[k] = '\0';
         fseek(inputfp, -1, SEEK_CUR);   // retract
         /**
-         * 这里有特殊判断
+        if(strcmp(token, "if") == 0)
+            printf("If\n");
+        else if(strcmp(token, "else") == 0)
+            printf("Else\n");
+        else if(strcmp(token, "while") == 0)
+            printf("While\n");
+        else if(strcmp(token, "break") == 0)
+            printf("Break\n");
+        else if(strcmp(token, "continue") == 0)
+            printf("Continue\n");
+        else if(strcmp(token, "return") == 0)
+            printf("Return\n");
+        else
+            printf("Ident(%s)\n", token);
         */
     }
     else if(isDigit(c)){
@@ -250,6 +262,5 @@ void Number(){  // Number部分先不写成递归下降
 }
 
 int error(){
-    printf("\nSomething error");
     exit(1);
 }

@@ -54,8 +54,9 @@ int getsym(){
 
             if(c == '/'){
                 while(c != '\n' && c != '\0' && c != '\r')
-                    if((c = fgetc(inputfp)) == EOF) // 这里要判断EOF，（很关键
+                    if((c = fgetc(inputfp)) == EOF)
                         return 0;
+                }      
                 c = fgetc(inputfp);
             }
             else if(c == '*'){

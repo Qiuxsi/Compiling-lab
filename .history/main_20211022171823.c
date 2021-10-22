@@ -53,9 +53,8 @@ int getsym(){
                 error();
 
             if(c == '/'){
-                while(c != '\n' && c != '\0' && c != '\r')
-                    if((c = fgetc(inputfp)) == EOF) // 这里要判断EOF，（很关键
-                        return 0;
+                while(c != '\n' && c != '\0' && c != '\r' && c != EOF)  // 这里漏了EOF直接TLE为什么？
+                    c = fgetc(inputfp);
                 c = fgetc(inputfp);
             }
             else if(c == '*'){

@@ -54,8 +54,7 @@ int getsym(){
 
             if(c == '/'){
                 while(c != '\n' && c != '\0' && c != '\r')
-                    if((c = fgetc(inputfp)) == EOF) // 这里要判断EOF，（很关键
-                        return 0;
+                    c = fgetc(inputfp);
                 c = fgetc(inputfp);
             }
             else if(c == '*'){
@@ -90,7 +89,7 @@ int getsym(){
         token[k] = '\0';
         fseek(inputfp, -1, SEEK_CUR);   // retract
         /**
-         * 这里有特殊判断
+         * 
         */
     }
     else if(isDigit(c)){
