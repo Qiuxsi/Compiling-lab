@@ -67,7 +67,7 @@ int getsym(){
                             break;
                         }
                         else
-                            fseek(inputfp, -1, SEEK_CUR);
+                            
                     }
                 }
             }

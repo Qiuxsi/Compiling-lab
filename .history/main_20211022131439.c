@@ -55,7 +55,8 @@ int getsym(){
             if(c == '/'){
                 while(c != '\n' && c != '\0' && c != '\r')
                     c = fgetc(inputfp);
-                c = fgetc(inputfp);
+                if((c = fgetc(inputfp)) == EOF)
+                    return 0;
             }
             else if(c == '*'){
                 while(1){
@@ -66,8 +67,6 @@ int getsym(){
                             c = fgetc(inputfp);
                             break;
                         }
-                        else
-                            fseek(inputfp, -1, SEEK_CUR);
                     }
                 }
             }

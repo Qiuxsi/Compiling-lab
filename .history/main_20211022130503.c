@@ -53,7 +53,7 @@ int getsym(){
                 error();
 
             if(c == '/'){
-                while(c != '\n' && c != '\0' && c != '\r')
+                while(c != '\n')
                     c = fgetc(inputfp);
                 c = fgetc(inputfp);
             }
@@ -66,8 +66,6 @@ int getsym(){
                             c = fgetc(inputfp);
                             break;
                         }
-                        else
-                            fseek(inputfp, -1, SEEK_CUR);
                     }
                 }
             }

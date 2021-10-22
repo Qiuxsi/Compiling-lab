@@ -66,11 +66,16 @@ int getsym(){
                             c = fgetc(inputfp);
                             break;
                         }
-                        else
-                            fseek(inputfp, -1, SEEK_CUR);
                     }
                 }
             }
+            else
+                error();
+        }
+        else if(c == '\r'){ // '\r'的判断有点奇怪
+            if(fgetc(inputfp) == '\n')
+                if((c = fgetc(inputfp)) == EOF)
+                    return 0;
             else
                 error();
         }

@@ -66,8 +66,6 @@ int getsym(){
                             c = fgetc(inputfp);
                             break;
                         }
-                        else
-                            fseek(inputfp, -1, SEEK_CUR);
                     }
                 }
             }

@@ -66,8 +66,6 @@ int getsym(){
                             c = fgetc(inputfp);
                             break;
                         }
-                        else
-                            fseek(inputfp, -1, SEEK_CUR);
                     }
                 }
             }
@@ -262,5 +260,6 @@ void Number(){  // Number部分先不写成递归下降
 }
 
 int error(){
+    printf("?");
     exit(1);
 }
