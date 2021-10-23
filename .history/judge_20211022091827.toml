@@ -1,7 +1,0 @@
-[jobs.lab1]
-
-image = { source = "dockerfile", path = ".", tag = ""}
-
-run = [
-    "./compiler $input $ir",
-]
