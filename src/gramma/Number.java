@@ -57,7 +57,6 @@ public class Number {
                 fw.flush();
                 lexer.getsym();
             } else if(lexer.t.toCharArray()[0] >= '1' && lexer.t.toCharArray()[0] <= '9') {
-                //System.out.print(lexer.t + "\n");
                 fw.write(lexer.t + "\n");
                 fw.flush();
                 lexer.getsym();

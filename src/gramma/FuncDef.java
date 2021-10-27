@@ -18,12 +18,10 @@ public class FuncDef {
             new FuncType(lexer).analysis(outputFile);
             new Ident(lexer).analysis(outputFile);
             if (lexer.t.equals("(")) {
-                //System.out.print("(");
                 fw.write("(");
                 fw.flush();
                 lexer.getsym();
                 if (lexer.t.equals(")")) {
-                    //System.out.print(")");
                     fw.write(")");
                     fw.flush();
                     lexer.getsym();

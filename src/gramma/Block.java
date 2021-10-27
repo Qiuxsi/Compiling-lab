@@ -16,13 +16,11 @@ public class Block {
             FileWriter fw = new FileWriter(outputFile, true);
 
             if (lexer.t.equals("{")) {
-                //System.out.print("{\n");
                 fw.write("{\n");
                 fw.flush();
                 lexer.getsym();
                 new Stmt(lexer).analysis(outputFile);
                 if (lexer.t.equals("}")) {
-                    //System.out.print("}");
                     fw.write("}");
                     fw.flush();
                     // lexer.getsym(); 这句加上就错了，返回值会为1

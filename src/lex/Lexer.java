@@ -84,6 +84,5 @@ public class Lexer {
         }
 
         t = token.toString();
-        //System.out.println(t);
     }
 }

@@ -16,7 +16,6 @@ public class Stmt {
             FileWriter fw = new FileWriter(outputFile, true);
 
             if (lexer.t.equals("return")) {
-                //System.out.print("    ret i32 ");
                 fw.write("    ret i32 ");
                 fw.flush();
                 lexer.getsym();

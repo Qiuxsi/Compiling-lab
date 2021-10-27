@@ -16,7 +16,6 @@ public class Ident {
             FileWriter fw = new FileWriter(outputFile, true);
 
             if (lexer.t.equals("main")) {
-                //System.out.print("main");
                 fw.write("@main");
                 fw.flush();
                 lexer.getsym();

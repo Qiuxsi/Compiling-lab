@@ -16,7 +16,6 @@ public class FuncType {
             FileWriter fw = new FileWriter(outputFile, true);
 
             if (lexer.t.equals("int")) {
-                //System.out.print("define dso_local i32 ");
                 fw.write("define dso_local i32 ");
                 fw.flush();
                 lexer.getsym();
