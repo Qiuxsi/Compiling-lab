@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="7a73d9d5-ef3b-4447-9b0a-ed9210462543" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="E:\IDEA\IntelliJ IDEA 2020.2\plugins\maven\lib\maven3" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="1ztLPhVhO7CBDLfebIqVY5Xzemq" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+  </component>
+  <component name="RunManager">
+    <configuration name="Test" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Test" />
+      <module name="Compiling-lab" />
+      <option name="PROGRAM_PARAMETERS" value="D:\\input.txt D:\\output.txt" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Test" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="7a73d9d5-ef3b-4447-9b0a-ed9210462543" name="Default Changelist" comment="" />
+      <created>1634962419844</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1634962419844</updated>
+      <workItem from="1634962421547" duration="8998000" />
+      <workItem from="1635249481994" duration="10123000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="0" y="75" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1635260095376">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="0" y="75" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.834@0.0.1536.834" timestamp="1635260095376" />
+    <state x="325" y="125" key="#com.intellij.ide.macro.MacrosDialog" timestamp="1635256407046">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="325" y="125" key="#com.intellij.ide.macro.MacrosDialog/0.0.1536.834@0.0.1536.834" timestamp="1635256407046" />
+    <state x="115" y="181" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1634966257626">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state x="115" y="181" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1536.864@0.0.1536.864" timestamp="1634966257626" />
+    <state width="1493" height="183" key="GridCell.Tab.0.bottom" timestamp="1635300528363">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state width="1493" height="183" key="GridCell.Tab.0.bottom/0.0.1536.834@0.0.1536.834" timestamp="1635300528363" />
+    <state width="1493" height="183" key="GridCell.Tab.0.center" timestamp="1635300528363">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state width="1493" height="183" key="GridCell.Tab.0.center/0.0.1536.834@0.0.1536.834" timestamp="1635300528363" />
+    <state width="1493" height="183" key="GridCell.Tab.0.left" timestamp="1635300528363">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state width="1493" height="183" key="GridCell.Tab.0.left/0.0.1536.834@0.0.1536.834" timestamp="1635300528363" />
+    <state width="1493" height="183" key="GridCell.Tab.0.right" timestamp="1635300528363">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state width="1493" height="183" key="GridCell.Tab.0.right/0.0.1536.834@0.0.1536.834" timestamp="1635300528363" />
+    <state x="0" y="156" width="924" height="641" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2" timestamp="1635257142528">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="0" y="156" width="924" height="641" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2/0.0.1536.834@0.0.1536.834" timestamp="1635257142528" />
+    <state x="46" y="179" width="672" height="655" key="search.everywhere.popup" timestamp="1635256336448">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="46" y="179" width="672" height="655" key="search.everywhere.popup/0.0.1536.834@0.0.1536.834" timestamp="1635256336448" />
+    <state x="46" y="185" width="672" height="678" key="search.everywhere.popup/0.0.1536.864@0.0.1536.864" timestamp="1634965384852" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.lang.NullPointerException" package="java.lang" />
+          <option name="timeStamp" value="2" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>
