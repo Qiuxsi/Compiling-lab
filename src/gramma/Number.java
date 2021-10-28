@@ -41,6 +41,7 @@ public class Number {
                 } else if(lexer.t.equals(";")) {    // 八进制中'0'的特殊情况
                     fw.write("0\n");
                     fw.flush();
+                    lexer.k--;
                     lexer.getsym();
                 }
             } else if (lexer.t.toCharArray()[0] == '0') {   // 八进制

@@ -3,8 +3,8 @@ import java.io.*;
 
 public class Lexer {
 
-    private char[] buffer = new char[1024];  // 存文件字符的数组
-    private int k;
+    public char[] buffer = new char[1024];  // 存文件字符的数组
+    public int k;
     public String t;
 
     public Lexer(String fileName) {
@@ -38,7 +38,7 @@ public class Lexer {
                 if ((++k) == buffer.length)
                     System.exit(1);
                 if (buffer[k] == '/') {
-                    while (buffer[k] != '\n' || buffer[k] != '\r')
+                    while (buffer[k] != '\n' && buffer[k] != '\r')
                         if ((++k) == buffer.length)
                             return;
                 } else if (buffer[k] == '*') {
