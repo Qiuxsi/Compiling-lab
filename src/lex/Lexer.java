@@ -3,7 +3,8 @@ import java.io.*;
 
 public class Lexer {
 
-    public char[] buffer = new char[1024];  // 存文件字符的数组
+    public char[] reader_buffer = new char[1024];  // 读取文件字符的数组
+    public char[] buffer;
     public int k;
     public String t;
 
@@ -11,7 +12,9 @@ public class Lexer {
         try {
             k = -1;
             FileReader fr = new FileReader(fileName);
-            fr.read(buffer);
+            int len = fr.read(reader_buffer);
+            buffer = new char[len]; // 真的可以这么写吗？
+            System.arraycopy(reader_buffer, 0, buffer, 0, len);
         } catch (IOException e) {
             System.out.println(e.toString());
         }
@@ -29,9 +32,10 @@ public class Lexer {
 
     public void getsym() {
         char c;
-        StringBuffer token = new StringBuffer();
+        StringBuilder token = new StringBuilder();
 
-        k++;
+        if ((++k) == buffer.length) // 已读取到文件末尾
+            return;
 
         while (buffer[k] == ' ' || buffer[k] == '\t' || buffer[k] == '\n' || buffer[k] == '\r' || buffer[k] == '/') {
             if (buffer[k] == '/') {

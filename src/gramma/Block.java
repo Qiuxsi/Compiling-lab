@@ -23,7 +23,7 @@ public class Block {
                 if (lexer.t.equals("}")) {
                     fw.write("}");
                     fw.flush();
-                    // lexer.getsym(); 这句加上就错了，返回值会为1
+                    lexer.getsym();
                 } else {
                     System.exit(1);
                 }
