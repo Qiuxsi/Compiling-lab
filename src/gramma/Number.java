@@ -11,7 +11,7 @@ public class Number {
         this.lexer = lexer;
     }
 
-    public void analysis(String outputFile) {
+    public int analysis(String outputFile) {
         try {
             FileWriter fw = new FileWriter(outputFile, true);
 
@@ -34,15 +34,17 @@ public class Number {
                                 System.exit(1);
                             }
                         }
-                        fw.write(n + "\n");
+                        fw.write(n + "");
                         fw.flush();
                         lexer.getsym();
+                        return n;
                     }
                 } else if(lexer.t.equals(";")) {    // 八进制中'0'的特殊情况
-                    fw.write("0\n");
+                    fw.write("0");
                     fw.flush();
-                    lexer.k--;
+                    lexer.k--;  // 回溯很关键
                     lexer.getsym();
+                    return 0;
                 }
             } else if (lexer.t.toCharArray()[0] == '0') {   // 八进制
                 char[] str = lexer.t.toCharArray();
@@ -54,18 +56,23 @@ public class Number {
                         System.exit(1);
                     }
                 }
-                fw.write(n + "\n");
+                fw.write(n + "");
                 fw.flush();
                 lexer.getsym();
+                return n;
             } else if(lexer.t.toCharArray()[0] >= '1' && lexer.t.toCharArray()[0] <= '9') {
-                fw.write(lexer.t + "\n");
-                fw.flush();
+                // fw.write(lexer.t);
+                // fw.flush();
+                int n = Integer.parseInt(lexer.t);
                 lexer.getsym();
+                return n;
+
             } else {
                 System.exit(1);
             }
         } catch (IOException e) {
             System.out.println(e.toString());
         }
+        return 0;
     }
 }

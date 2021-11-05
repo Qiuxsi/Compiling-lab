@@ -7,6 +7,7 @@ import java.io.IOException;
 
 public class Stmt {
     public Lexer lexer;
+    static public int index = 1;
     public Stmt(Lexer lexer) {
         this.lexer = lexer;
     }
@@ -16,11 +17,17 @@ public class Stmt {
             FileWriter fw = new FileWriter(outputFile, true);
 
             if (lexer.t.equals("return")) {
-                fw.write("    ret i32 ");
-                fw.flush();
                 lexer.getsym();
-                new Number(lexer).analysis(outputFile);
+                int n = new Exp(lexer).analysis(outputFile);
+                if (n == -1) {
+                    fw.write("    ret i32 %" + Stmt.index + "\n");
+                } else {
+                    fw.write("    ret i32 " + n + "\n");
+                }
+                fw.flush();
                 if (lexer.t.equals(";")) {
+                    //fw.write("\n");
+                    //fw.flush();
                     lexer.getsym();
                 } else {
                     System.exit(1);

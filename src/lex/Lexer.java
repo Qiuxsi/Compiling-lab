@@ -29,13 +29,18 @@ public class Lexer {
     public boolean isDelimiter(char c) {
         return c == '(' || c == ')' || c == '{' || c == '}' || c == ';';
     }
+    public boolean isOperation(char c) {
+        return c == '+' || c == '-';
+    }
 
     public void getsym() {
         char c;
         StringBuilder token = new StringBuilder();
 
-        if ((++k) == buffer.length) // 已读取到文件末尾
+        if ((++k) == buffer.length) {   // 已读取到文件末尾
+            t = token.toString();
             return;
+        }
 
         while (buffer[k] == ' ' || buffer[k] == '\t' || buffer[k] == '\n' || buffer[k] == '\r' || buffer[k] == '/') {
             if (buffer[k] == '/') {
@@ -81,7 +86,7 @@ public class Lexer {
                     break;
             }
             k--;
-        } else if (isDelimiter(buffer[k])) {
+        } else if (isDelimiter(buffer[k]) || isOperation(buffer[k])) {
             token.append(buffer[k]);
         } else {
             System.exit(1);
