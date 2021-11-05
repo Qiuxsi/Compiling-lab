@@ -18,22 +18,22 @@ public class UnaryExp {
                 new UnaryOp(lexer).analysis(outputFile);
                 int flag = new UnaryExp(lexer).analysis(outputFile);
                 if (flag != -1) {
-                    fw.write("    %" + Stmt.index + " = sub i32 0, " + flag + "\n");
+                    fw.write("    %x" + Stmt.index + " = sub i32 0, " + flag + "\n");
                     fw.flush();
                 } else {
                     Stmt.index++;
-                    fw.write("    %" + Stmt.index + " = sub i32 0, %" + (Stmt.index - 1) + "\n");
+                    fw.write("    %x" + Stmt.index + " = sub i32 0, %x" + (Stmt.index - 1) + "\n");
                     fw.flush();
                 }
             } else if (lexer.t.equals("+")) {
                 new UnaryOp(lexer).analysis(outputFile);
                 int flag = new UnaryExp(lexer).analysis(outputFile);
                 if (flag != -1) {
-                    fw.write("    %" + Stmt.index + " = add i32 0, " + flag + "\n");
+                    fw.write("    %x" + Stmt.index + " = add i32 0, " + flag + "\n");
                     fw.flush();
                 } else {
                     Stmt.index++;
-                    fw.write("    %" + Stmt.index + " = add i32 0, %" + (Stmt.index - 1) + "\n");
+                    fw.write("    %x" + Stmt.index + " = add i32 0, %x" + (Stmt.index - 1) + "\n");
                     fw.flush();
                 }
             } else {

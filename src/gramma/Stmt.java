@@ -7,7 +7,7 @@ import java.io.IOException;
 
 public class Stmt {
     public Lexer lexer;
-    static public int index = 1;
+    static public int index = 0;
     public Stmt(Lexer lexer) {
         this.lexer = lexer;
     }
@@ -20,7 +20,7 @@ public class Stmt {
                 lexer.getsym();
                 int n = new Exp(lexer).analysis(outputFile);
                 if (n == -1) {
-                    fw.write("    ret i32 %" + Stmt.index + "\n");
+                    fw.write("    ret i32 %x" + Stmt.index + "\n");
                 } else {
                     fw.write("    ret i32 " + n + "\n");
                 }
